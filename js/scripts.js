@@ -9,10 +9,16 @@ const mouseTarget2 = document.getElementById('navbar2');
 const mouseTarget3 = document.getElementById('navbar3');
 const mouseTarget4 = document.getElementById('navbar4');
 
+const settingsMenu = document.getElementById('settings');
+
 const unorderedList = document.getElementById('unorderList');
 
+settingsMenu.addEventListener('mouseenter', e=>{
+  settingsMenu.style.backgroundColor = "#121629";
+})
+
 mouseTarget0.addEventListener('mouseenter', e => {
-  if(Math.random == 1){
+  if(Math.random() == 0){
     mouseTarget0.style.transform = transformPlus;
   }
   else{
@@ -51,7 +57,7 @@ mouseTarget2.addEventListener('mouseleave', e => {
 });
 
 mouseTarget3.addEventListener('mouseenter', e => {
-    if(Math.random() == 1){
+    if(Math.random() == 0){
     mouseTarget3.style.transform = transformPlus;
   }
   else{
