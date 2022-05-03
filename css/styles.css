@@ -1,21 +1,86 @@
 :root {
-    --background: #232946;
-    --headline: #fffffe;
-    --paragraph: #b8c1ec;
-    --button: #eebbc3;
-    --buttontext: #232946;
-    --main: #b8c1ec;
+    --background: #80DED9;
+    --headline: #ffffff;
+    --paragraph: #068D9D;
+    --button: #AEECEF;
+    --buttontext: #53599A;
+    --main: #80DED9;
     --secondary: #fffffe;
-    --tertiary: #eebbc3;
+    --tertiary: #068D9D;
     --stroke: #121629;
+    --secondaryStroke: #AEECEF;
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
 }
 
 html {
     background-color: var(--background);
     font-family: 'Comic Code', Comic , monospace;
 }
+#faviconNearLink td{
+    padding: 5pt;
+    text-align: center;
+    background-color: var(--background);
+    
+}
+#faviconNearLink{
+    border: solid var(--background);
+    vertical-align: middle;
+}
 
-ul {
+#settings img{
+    width: 64px;
+    height: 58px;
+    float: right;
+    margin-left: 95%;
+    margin-top: 1%;
+    background-color: var(--headline);
+    padding: 3pt;
+    border-radius: 360pt;
+    position: fixed;
+}
+
+.tablecheck th{
+    border: var(--stroke) solid 2px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: var(--buttontext);
+}
+
+
+.tablecheck ul{
+    vertical-align: middle;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--tertiary);
+}
+.tablecheck li{
+    display: block;
+    text-align: center;
+    padding: 10pt;
+    font-size: x-small;
+    padding-left: 2%;
+    font-size: small;
+}
+.tablecheck li a{
+    padding: 10pt;
+}
+
+
+
+#mouseTarget {
+    position: sticky ;
+}
+
+#mouseTarget ul {
     list-style-type: none;
     display: flex;
     align-items: stretch;
@@ -28,7 +93,7 @@ ul {
     top: 0;
     width: 100%;
 }
-li {
+#mouseTarget li {
     display: inline;
     text-align: center;
     float: left;
@@ -37,15 +102,13 @@ li {
     padding-left: 2%;
 }
 
-li a {
+#mouseTarget li a {
     display:block;
-    color: var(--buttontext);
+    color: var(--secondaryStroke);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-
-/* Change the link color to #111 (black) on hover */
 
 #navbar:hover {
     background-color: var(--headline);
@@ -54,11 +117,11 @@ li a {
 
 #mouseTarget {
     box-sizing: border-box;
-    border:2px solid #333;
+    border:2px solid var(--stroke);
 }
 
 .title{
-    background-color: var(--main);
+    background-color: var(--secondary);
     padding: 1%;
     text-align: center;
     width: 20%;
@@ -84,7 +147,7 @@ li a {
 
 .sideArticles1 {
     background-color: var(--paragraph);
-    color: var(--buttontext);
+    color: var(--secondaryStroke);
     padding: 1% 5%;
     width: 40%;
     margin-left: 5%;
@@ -96,7 +159,7 @@ li a {
 }
 .sideArticles2 {
     background-color: var(--tertiary);
-    color: var(--buttontext);
+    color: var(--secondaryStroke);
     padding: 1% 5%;
     width: 28%;
     margin-right: 5%;
@@ -107,12 +170,12 @@ li a {
     font-size: smaller;
 }
 .sideArticles3 {
-    background-color: var(--tertiary);
+    background-color: var(--headline);
     color: var(--buttontext);
     padding: 1% 5%;
     width: 28%;
-    margin-left: 5%;
     margin-top: 2%;
+    margin-left: 2%;
     border-radius: 1cm 1cm 1cm 1cm;
     box-shadow: -5px 5px 10px var(--stroke);
     float: left;
@@ -130,3 +193,37 @@ li a {
     float: right;
     font-size: smaller;
 }
+
+
+
+.card {
+    display: inherit;
+    background: var(--buttontext);
+    width: 100%;
+    height: var(--card-height);
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+    color: var(--buttontext);
+    cursor: pointer;
+    font-family: "Comic Code";
+  }
+  
+  .card:hover {
+    color: var(--secondaryStroke);
+    transition: color 1s;
+  }
+  .card:not(:hover) {
+    color: var(--buttontext);
+    transition: color 1s;
+  }
+  .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  
